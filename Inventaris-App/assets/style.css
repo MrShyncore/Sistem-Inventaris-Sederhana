@@ -1,0 +1,479 @@
+/* ============================================
+   Sistem Inventaris — Custom CSS
+   (menggantikan Bootstrap, mendefinisikan ulang class yang dipakai HTML)
+   ============================================ */
+
+:root {
+    --primary: #0d6efd;
+    --success: #198754;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --dark: #212529;
+    --light: #f8f9fa;
+    --muted: #6c757d;
+    --border: #dee2e6;
+    --radius: 6px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, .08);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #212529;
+    background: var(--light);
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+    background: #eef1f4;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: Menlo, Consolas, monospace;
+    font-size: 90%;
+}
+
+main { padding: 1rem 0; }
+
+/* ---------- Container ---------- */
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background: var(--dark);
+    color: #fff;
+    padding: 12px 0;
+    margin-bottom: 1rem;
+}
+.navbar .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.navbar-brand {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+}
+.navbar-brand:hover { color: #fff; text-decoration: none; }
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    background: transparent;
+    color: #212529;
+    transition: background .15s, border-color .15s, color .15s;
+    white-space: nowrap;
+}
+.btn:hover { text-decoration: none; }
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, .25);
+}
+
+.btn-sm { padding: 3px 9px; font-size: 12.5px; }
+
+.btn-primary        { background: var(--primary); color: #fff; }
+.btn-primary:hover  { background: #0b5ed7; color: #fff; }
+
+.btn-success        { background: var(--success); color: #fff; }
+.btn-success:hover  { background: #157347; color: #fff; }
+
+.btn-warning        { background: var(--warning); color: #000; }
+.btn-warning:hover  { background: #e0a800; color: #000; }
+
+.btn-danger         { background: var(--danger); color: #fff; }
+.btn-danger:hover   { background: #bb2d3b; color: #fff; }
+
+.btn-secondary       { background: #6c757d; color: #fff; }
+.btn-secondary:hover { background: #5c636a; color: #fff; }
+
+.btn-outline-light          { border-color: #f8f9fa; color: #f8f9fa; background: transparent; }
+.btn-outline-light:hover    { background: #f8f9fa; color: var(--dark); }
+
+.btn-outline-secondary      { border-color: #6c757d; color: #6c757d; background: #fff; }
+.btn-outline-secondary:hover{ background: #6c757d; color: #fff; }
+
+/* Button group */
+.btn-group { display: inline-flex; }
+.btn-group > .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+.btn-group > .btn:first-child {
+    border-radius: var(--radius) 0 0 var(--radius);
+    margin-left: 0;
+}
+.btn-group > .btn:last-child {
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+.btn-group-sm > .btn { padding: 3px 9px; font-size: 12.5px; }
+
+/* ---------- Card ---------- */
+.card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+.card-body { padding: 1.25rem; }
+
+/* ---------- Forms ---------- */
+.form-label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.form-control, .form-select {
+    display: block;
+    width: 100%;
+    padding: 7px 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #212529;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color .15s, box-shadow .15s;
+}
+.form-control:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, .2);
+}
+textarea.form-control { min-height: 80px; resize: vertical; }
+
+/* ---------- Tables ---------- */
+.table-responsive { overflow-x: auto; }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 14px;
+}
+.table th, .table td {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    vertical-align: middle;
+}
+.table thead th { font-weight: 600; }
+
+.table-dark th {
+    background: var(--dark);
+    color: #fff;
+    border-color: var(--dark);
+}
+.table-striped tbody tr:nth-child(odd) { background: #f8f9fa; }
+.table-striped tbody tr:hover { background: #f1f3f5; }
+.table-bordered { border: 1px solid var(--border); }
+
+/* ---------- Alerts ---------- */
+.alert {
+    padding: 12px 40px 12px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    position: relative;
+}
+.alert-success { background: #d1e7dd; color: #0f5132; border-color: #badbcc; }
+.alert-danger  { background: #f8d7da; color: #842029; border-color: #f5c2c7; }
+.alert ul { margin: 0; padding-left: 20px; }
+
+/* Tombol close alert (pengganti .btn-close Bootstrap) */
+.btn-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: inherit;
+    cursor: pointer;
+    opacity: .55;
+    padding: 2px 6px;
+}
+.btn-close:hover { opacity: 1; }
+.btn-close::before { content: "\00D7"; }
+
+/* ---------- Grid sederhana ---------- */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+}
+.row > * { padding: 0 8px; }
+
+.g-2 > * { margin-bottom: 8px; }
+.g-3 > * { margin-bottom: 12px; }
+
+.col-12,
+.col-md-3, .col-md-5, .col-md-6, .col-md-8,
+.col-lg-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .col-md-3 { flex: 0 0 25%;      max-width: 25%; }
+    .col-md-5 { flex: 0 0 41.6667%; max-width: 41.6667%; }
+    .col-md-6 { flex: 0 0 50%;      max-width: 50%; }
+    .col-md-8 { flex: 0 0 66.6667%; max-width: 66.6667%; }
+}
+
+@media (min-width: 992px) {
+    .col-lg-8 { flex: 0 0 66.6667%; max-width: 66.6667%; }
+}
+
+/* ---------- Utility ---------- */
+.d-flex              { display: flex; }
+.d-inline            { display: inline; }
+.d-inline-block      { display: inline-block; }
+.flex-wrap           { flex-wrap: wrap; }
+.justify-content-center    { justify-content: center; }
+.justify-content-between   { justify-content: space-between; }
+.align-items-center  { align-items: center; }
+.gap-1 { gap: .25rem; }
+.gap-2 { gap: .5rem; }
+.gap-3 { gap: 1rem; }
+
+.w-100 { width: 100%; }
+.text-center { text-align: center; }
+.text-end    { text-align: right; }
+.text-muted  { color: var(--muted); }
+.text-white-50 { color: rgba(255, 255, 255, .75); }
+.text-nowrap { white-space: nowrap; }
+
+.fw-bold { font-weight: 700; }
+.small   { font-size: 12.5px; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-2 { margin-bottom: .5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-5 { margin-bottom: 3rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.p-4  { padding: 1.5rem; }
+.py-3 { padding: 1rem 0; }
+
+.border-top { border-top: 1px solid var(--border); }
+.bg-light   { background: var(--light); }
+.bg-white   { background: #fff; }
+.bg-dark    { background: var(--dark); }
+.shadow-sm  { box-shadow: var(--shadow); }
+
+footer { color: var(--muted); font-size: 13px; }
+
+/* ============================================
+   RESPONSIVE — TABLET & MOBILE
+   ============================================ */
+
+/* ---------- Tablet (≤ 991px) ---------- */
+@media (max-width: 991px) {
+    .container { padding: 0 12px; }
+    body       { font-size: 14.5px; }
+}
+
+/* ---------- Mobile (≤ 767px) ---------- */
+@media (max-width: 767px) {
+
+    /* Container & body */
+    .container { padding: 0 10px; }
+    body       { font-size: 15px; }
+    main       { padding: 0.5rem 0; }
+
+    /* ---- NAVBAR: stack vertikal, tombol wrap ---- */
+    .navbar { padding: 10px 0; margin-bottom: 12px; }
+    .navbar .container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .navbar-brand {
+        text-align: center;
+        font-size: 1.05rem;
+        padding: 4px 0;
+    }
+    .navbar .d-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px !important;
+    }
+    .navbar .text-white-50 {
+        flex: 0 0 100%;
+        text-align: center;
+        margin: 4px 0;
+    }
+
+    /* ---- TOMBOL: lebih besar untuk jari (min 40px) ---- */
+    .btn {
+        padding: 9px 14px;
+        font-size: 14px;
+        min-height: 40px;
+        line-height: 1.3;
+    }
+    .btn-sm {
+        padding: 7px 11px;
+        font-size: 13px;
+        min-height: 36px;
+    }
+
+    /* Tombol di navbar: sedikit lebih kecil tapi tetap tap-able */
+    .navbar .btn-sm { padding: 7px 10px; }
+
+    /* ---- JUDUL ---- */
+    h3 { font-size: 1.2rem; margin: 8px 0 12px; }
+    h4 { font-size: 1.05rem; }
+
+    /* ---- HEADER "Daftar Barang" + tombol tambah: stack ---- */
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 10px;
+    }
+    .d-flex.justify-content-between .btn {
+        width: 100%;
+    }
+
+    /* ---- FORM: input 16px mencegah auto-zoom iOS ---- */
+    .form-control, .form-select {
+        padding: 10px 12px;
+        font-size: 16px;
+        min-height: 44px;
+    }
+    textarea.form-control {
+        font-size: 16px;
+        min-height: 90px;
+    }
+    .form-label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        margin-top: 8px;
+    }
+
+    /* ---- CARD ---- */
+    .card-body { padding: 1rem; }
+
+    /* ---- ALERT ---- */
+    .alert {
+        padding: 10px 38px 10px 14px;
+        font-size: 14px;
+    }
+    .alert ul { padding-left: 16px; }
+
+    /* ---- TABEL: HORIZONTAL SCROLL (Opsi A) ---- */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: #fff;
+    }
+    .table {
+        min-width: 700px;  /* paksa scroll horizontal */
+        font-size: 13.5px;
+    }
+    .table th, .table td { padding: 8px 10px; }
+
+    /* Cue visual: geser untuk lihat lebih */
+    .table-responsive::after {
+        content: "← geser →";
+        display: block;
+        text-align: center;
+        font-size: 11px;
+        color: var(--muted);
+        padding: 4px 0;
+        background: #fff;
+        border-top: 1px dashed var(--border);
+    }
+
+    /* ---- FOOTER ---- */
+    footer { font-size: 12px; padding: 12px 0; }
+}
+
+/* ============================================
+   TABEL → KARTU di Mobile (Opsi B)
+   ============================================ */
+@media (max-width: 767px) {
+
+    .table-card .table {
+        min-width: 0;
+        border: none;
+        background: transparent;
+    }
+    .table-card .table thead { display: none; }
+    .table-card .table,
+    .table-card .table tbody,
+    .table-card .table tr,
+    .table-card .table td {
+        display: block;
+        width: 100%;
+    }
+    .table-card .table tr {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        margin-bottom: 12px;
+        padding: 6px 14px;
+        box-shadow: var(--shadow);
+    }
+    .table-card .table td {
+        border: none;
+        border-bottom: 1px dashed #eef1f4;
+        padding: 8px 0;
+        text-align: left !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+        white-space: normal !important;
+    }
+    .table-card .table td:last-child {
+        border-bottom: none;
+        border-top: 1px solid var(--border);
+        margin-top: 4px;
+        padding-top: 12px;
+        justify-content: flex-end;
+    }
+    .table-card .table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--muted);
+        font-size: 12.5px;
+        flex: 0 0 38%;
+        padding-top: 2px;
+    }
+
+    /* Hanya sembunyikan LABEL, bukan seluruh <td> */
+    .table-card .table td[data-label=""]::before { content: none; }
+    .table-card .table td:last-child::before { content: none; flex: 0; }
+
+    .table-card .table-striped tbody tr:nth-child(odd) { background: #fff; }
+
+    /* ❗ DIPERBAIKI: selector sekarang benar (pakai .table-card saja) */
+    .table-card::after { content: none; }
+    .table-card { border: none; background: transparent; }
+}
